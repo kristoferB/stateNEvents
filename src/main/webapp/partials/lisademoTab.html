@@ -1,0 +1,39 @@
+<!--<div class="panel panel-default"><div class="panel-body"></div></div>-->
+<div ng-controller="LisaDemoTab">
+    <div>
+        <div class="row">
+
+            <div class="col-md-6" ng-controller="statemachine">
+                <div class="panel panel-default" ng-show="!hideInfo">
+                    <div class="panel-body">
+                        <div class="pull-right" ng-click="hideInfo = true"><span
+                                class="glyphicon glyphicon-remove"></span></div>
+
+                        <h3>Tillstånd och övergångar</h3>
+                        <h4>- Övning 1</h4>
+                        <br>
+                        Denna övning handlar om att fundera på vad tillstånd och övergångar är och hur vi kan beskriva dem <br>
+                    </div>
+                </div>
+
+                <h4>Händelser</h4>
+                <button type="button" class="btn btn-default" ng-click="getInit()"><span class="glyphicon glyphicon-refresh"></span> Init state</button>
+
+                <h6>Enabled Events</h6>
+                <div>{{state.display}}</div>
+                <div ng-repeat="ev in state.events">
+                    <button  type="button" class="btn btn-default event" ng-click="getNext(state.name, ev.name)">{{ev.name}}</button>
+                </div>
+
+
+
+        </div>
+        <div class="row">
+
+
+
+        </div>
+
+    </div>
+</div>
+
